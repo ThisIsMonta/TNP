@@ -1,0 +1,48 @@
+<app-accueil></app-accueil>
+<div class="card w-25 d-flex ml-5 mt-5 mx-auto shadow-lg" style="border-radius: 30px">
+    <div class="card-body bg-dark" style="border-radius: 30px">
+        <h5 class="card-title text-center text-light">Editing Pizza</h5>
+        <div class="card-text d-flex flex-column text-light mx-auto">
+            <form #f="ngForm" (ngSubmit)="onUpdate(f)">
+                Name <span class="text-danger">(You cannot change the name)</span>: <input type="text" name="name" [value]="name" [(ngModel)]="name" class="form-control w-100 mt-1" readonly><br>
+                Ingredient : <div class="form-group w-100 mt-1">
+                    <select class="form-control" name="ingredients" id="IngredientID" ngModel #ingredients="ngModel"
+                        (change)="ingredientSelector(f)">
+                        <option>Tomato</option>
+                        <option>Mashroom</option>
+                        <option>Calamari</option>
+                        <option>Smoked Beef</option>
+                        <option>Olives</option>
+                        <option>Cheese</option>
+                        <option>Bresaola</option>
+                        <option>Parmesan</option>
+                        <option>Basil</option>
+                    </select>
+                </div>
+                <div class="d-inline" *ngFor="let i of ingredientsArray;let index=index">
+                    <span class="badge badge-pill badge-danger mb-3 p-2 mr-2">{{i}} &nbsp;<a
+                            (click)="removeIngredient(i)"><i class="fa fa-times-circle"
+                                aria-hidden="true"></i></a></span>
+                </div><br>
+                <!-- Tags  -->
+                <!-- <div>
+                    <input type="file" name="img" ngModel #img="ngModel">
+                </div> -->
+                <label class="mr-2" for="titleImage">Image : </label>
+                <input type="text" class="form-control" name="image" [(ngModel)]="image" id="customFile" placeholder="Ex : https://www.simpleetbon.com/system/recipes/photos/000/000/347/original/pizza_poivron_oignon.jpg?15295">
+                <br>
+                Price : <input type="number" name="price" [value]="price" [(ngModel)]="price" min="10" max="40"
+                    class="form-control w-100" step="any"><br>
+                Description : <br><textarea name="description" [value]="description" id="descPizza" cols="6" rows="10" [(ngModel)]="description"
+                    class="form-control w-100 h-25"></textarea><br>
+                <div class="d-flex mx-auto w-100 justify-content-between">
+                    <button type="reset" class="btn btn-danger text-lignt form-control ml-3" style="color: white;"
+                        routerLinkActive="active" [routerLink]="['/info']">Cancel</button>
+                    <button type="submit" class="btn btn-success text-light form-control mr-3"
+                        style="color: white;">Update</button>
+                </div>
+                
+            </form>
+        </div>
+    </div>
+</div>

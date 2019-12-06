@@ -1,0 +1,46 @@
+<!-- <app-accueil></app-accueil>
+<div class="card w-50 d-flex justify-content-center mx-auto mt-5 shadow-lg" style="border:none">
+    <div class="card-body bg-light">
+      <h5 class="card-title text-dark">Pizza</h5>
+      <h6 class="card-subtitle mb-2 text-muted ">What is Pizza ?</h6>
+      <p class="card-text text-dark">
+            Pizza (Italian: [ˈpittsa], Neapolitan: [ˈpittsə]) is a savory dish of Italian origin, consisting of a usually round, flattened base of leavened wheat-based dough topped with tomatoes, cheese, and often various other ingredients (anchovies, olives, meat, etc.) baked at a high temperature, traditionally in a wood-fired oven. A small pizza is sometimes called a pizzetta. 
+            <br><br>
+            In Italy, pizza served in formal settings, such as at a restaurant, is presented unsliced and eaten with the use of a knife and fork.In casual settings it is cut into wedges to be eaten while held in the hand.
+            <br><br>
+            The term pizza was first recorded in the 10th century in a Latin manuscript from the Southern Italian town of Gaeta in Lazio, on the border with Campania.Modern pizza was invented in Naples, and the dish and its variants have since become popular in many countries. It has become one of the most popular foods in the world and a common fast food item in Europe and North America, available at pizzerias (restaurants specializing in pizza), restaurants offering Mediterranean cuisine, and via pizza delivery.Many companies sell ready-baked frozen pizzas to be reheated in an ordinary home oven.
+            <br><br>
+            The Associazione Verace Pizza Napoletana (lit. True Neapolitan Pizza Association) is a non-profit organization founded in 1984 with headquarters in Naples that aims to promote traditional Neapolitan pizza. In 2009, upon Italy's request, Neapolitan pizza was registered with the European Union as a Traditional Speciality Guaranteed dish, and in 2017 the art of its making was included on UNESCO's list of intangible cultural heritage.</p>
+        <div class="d-flex justify-content-between">
+            <button class="btn btn-outline-secondary text-dark" style="color: white;">⯇</button>
+            <button class="btn btn-outline-secondary text-dark" style="color: white;">⯈</button>
+        </div>
+    </div>
+</div> -->
+<app-accueil></app-accueil>
+<ngb-carousel *ngIf="images">
+    <ng-template ngbSlide>
+      <div class="picsum-img-wrapper d-flex justify-content-center mt-5">
+        <img [src]="images[0]" alt="Random first slide" class="shadow-lg">
+      </div>
+      <div class="carousel-caption">
+        <p class="display-4 text-light">Order your pizza now</p>
+      </div>
+    </ng-template>
+    <ng-template ngbSlide>
+      <div class="picsum-img-wrapper d-flex justify-content-center mt-5">
+        <img [src]="images[1]" alt="Random second slide" class="shadow-lg">
+      </div>
+      <div class="carousel-caption">
+        <p class="display-4 text-light">Pizza is so delicious</p>
+      </div>
+    </ng-template>
+    <ng-template ngbSlide>
+      <div class="picsum-img-wrapper d-flex justify-content-center mt-5">
+        <img [src]="images[2]" alt="Random third slide" class="shadow-lg">
+      </div>
+      <div class="carousel-caption">
+        <p class="display-4 text-light">Yummy !</p>
+      </div>
+    </ng-template>
+  </ngb-carousel>

@@ -1,0 +1,19 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-dark shadow-lg">
+  <a class="navbar-brand text-light" href="#" routerLinkActive="active" [routerLink]="['/info']"><img src="./assets/Sonya-Swarm-Pizza.ico" width="30" class="d-inline-block align-top mr-1 ">Pizzareya</a><span class="sr-only">(current)</span>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <!-- <a class="nav-item nav-link active" >Home <span class="sr-only">(current)</span></a> -->      
+      <a class="nav-item nav-link text-light" routerLinkActive="active" [routerLink]="['/add-pizza']">Add Pizza</a>
+      <a class="nav-item nav-link text-light" routerLinkActive="active" [routerLink]="['/show-pizza']">Show Pizzas</a> 
+    </div>
+  </div>
+  <form class="form-inline">
+      <div class="text-danger">Logout</div>
+      <a class="nav-item nav-link" (click)="signOut()">
+        <i class="fa fa-sign-out text-danger" style="font-size: 30px"></i>
+      </a>
+  </form>
+</nav>
+
+
+  

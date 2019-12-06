@@ -1,0 +1,57 @@
+<app-accueil></app-accueil>
+<div class="card w-75 d-flex justify-content-center mx-auto mt-5 shadow-lg"  style="border-radius: 30px">
+    <!--Table-->
+    <div class="card-body bg-dark" style="border-radius: 30px">
+        <h5 class="card-title text-light">Showing Pizzas</h5>
+        <table class="table table-fixed text-light">
+            <!--Table head-->
+            <thead>
+                <tr>
+                    <th>N°</th>
+                    <th>Name</th>
+                    <th>Ingredients</th>
+                    <th>Image</th>
+                    <th>Price</th>
+                    <th>Description</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <!--Table head-->
+            <!--Table body-->
+            <tbody>
+                <tr class="show" *ngFor="let p of allPizzas | async ;let i=index">
+                    <th scope="row">{{i}}</th>
+                    <td>{{p.name}}</td>
+                    <td>{{p.ingredients}}</td>
+                    <td>
+                        <button class="btn btn-primary mr-1" style="border-radius: 30px;" (click)="openImage(p.image,p.name)">
+                        <i class="fa fa-eye" aria-hidden="true"></i>
+                        </button>
+                    </td>
+                    <td>{{p.price}}$</td>
+                    <td>{{p.description}}</td>
+                    <td>
+                        <button class="btn btn-success mr-1" routerLinkActive="active" [routerLink]="['/edit-pizza',p.name,p.image,p.price,p.description]"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                        <button class="btn btn-danger" (click)="deleteItem(p.name)"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                    </td>
+                    <!-- Showing Image -->
+                </tr>
+                <tr>
+                    <td class="mx-auto text-center" colspan="7">Add new pizza <a class="text-light" routerLinkActive="active" [routerLink]="['/add-pizza']"><i class="fa fa-plus-circle" aria-hidden="true"></i></a></td>
+                </tr>
+            </tbody>
+            <!--Table body-->
+        </table>
+        <!--Table-->
+    </div>
+    <div class="backdrop" [ngStyle]="{'display':display}">
+        <div class="card mx-auto mt-5" style="width:900px;border-radius: 30px">
+            <div class="card-body text-center w-100 bg-dark" style="border-radius: 30px">
+                <h5 class="card-title text-light">{{name}}</h5>
+                <div class="card-text text-light mx-auto">
+                    <img [src]="img" class="mb-3" style="width: 850px;height: 550px;border-radius: 30px" alt=""><br>
+                    <button class="btn btn-danger form-control w-25" (click)="closeImage()">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>

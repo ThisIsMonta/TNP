@@ -1,0 +1,46 @@
+<div class="my-login-page">
+  <div class="container h-100">
+    <div class="row justify-content-md-center h-100">
+      <div class="card-wrapper">
+        <div class="brand">
+          <div class="d-flex justify-align-content">
+            <img src="./assets/Sonya-Swarm-Pizza.ico" width="30" class="d-inline-block align-top mr-5" />
+            <h4 class="display-4 text-light mt-3">Pizzareya</h4>
+          </div>
+        </div>
+        <form #formSignUp="ngForm">
+          <div class="card fat">
+            <div class="card-body">
+              <h4 class="card-title">Sign Up</h4>
+              <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" class="form-control" ngModel name="email" #email="ngModel" required>
+              </div>
+              <div class="form-group">
+                <label for="password">Password</label>
+                <div class="d-flex justify-align-content">
+                  <input type="password" class="form-control" ngModel name="password" #pwd="ngModel" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="password">Confirm Password</label>
+                <div class="d-flex justify-align-content">
+                  <input type="password" class="form-control" ngModel name="Cpassword" #pwd="ngModel" required>
+                </div>
+              </div>
+              <div class="form-group m-0">
+                <button type="submit" class="btn btn-primary btn-block" (click)="onSignUp(formSignUp)">Sign Up</button>
+              </div>
+              <div class="d-flex justify-align-content mt-3" [hidden]="!submitted">
+                <p class="mx-auto text-danger">{{message}}</p>
+              </div>
+              <div class="d-flex justify-align-content mt-3">
+                <p class=" mx-auto">Already have an account ? <a routerLinkActive="active" [routerLink]="['/login']">Sign in</a></p>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

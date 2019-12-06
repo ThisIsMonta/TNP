@@ -1,0 +1,10 @@
+img{
+  display: block;
+  width : 70%;
+  height: 800px;
+  border: 4px solid tra;
+  border-radius: 30px;
+}
+.carousel-caption{
+  text-shadow: black 5px 0 10px;
+}
